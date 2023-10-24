@@ -12,8 +12,8 @@ trait AuthTestTrait
 
     public function mockOpensslRandomPseudoBytes(): void
     {
-        $time = $this->getFunctionMock('App\Services', 'openssl_random_pseudo_bytes');
-        $time->expects($this->once())->willReturn('5qw6rdsyd4sa65d4zxfc65ds4fc');
+        $mock = $this->getFunctionMock('App\Services', 'openssl_random_pseudo_bytes');
+        $mock->expects($this->once())->willReturn('5qw6rdsyd4sa65d4zxfc65ds4fc');
     }
 
     public function decodeJWTToken($token)
